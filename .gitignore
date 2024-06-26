@@ -2,7 +2,11 @@
 .DS_Store
 
 **/__pycache__
+**/*.pyc
+.ruff_cache
+.pytest_cache
 .venv
-cv_generator/source_data/**
+
+cv_generator/source_data/*.yml
 cv_generator/files/json/**
 cv_generator/files/CV-*.html
