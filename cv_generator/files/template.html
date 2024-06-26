@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="styles/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  </head>
+  <body lang="en">
+    <section id="main">
+      <header id="title">
+        <div class="row">
+          <div class="column title" style="text-align: left;">{{ general.fullName }}</div>
+          <div class="column subtitle" style="text-align: right;">{{ general.jobTitle }}</div>
+        </div>
+      </header>
+
+      <div id="personal">
+        <ul>
+          <li><strong>Birthdate:</strong> {{ personal.private.birthDate }}</li>
+          <li><strong>Location:</strong> {{ personal.private.location }}</li>
+          <li><strong>Nationality:</strong> {{ personal.private.nationality }}</li>
+          <li><strong>Gender:</strong> {{ personal.private.sex }}</li>
+          <li><strong>Driving license:</strong> {{ personal.private.drivingLicense }}</li>
+        </ul>
+
+        <div id="profile-photo">
+          <img src="{{ general.img }}" alt="{{ general.fullName }}">
+        </div>
+
+        <ul>
+          <li><i class="fa fa-envelope"></i> {{ personal.public.email }}</li>
+          <li><i class="fa fa-phone"></i> {{ personal.private.phone }}</li>
+          {% if personal.private.skype %}<li><i class="fa fa-skype"></i> {{ personal.private.skype }}</li>{% endif %}
+          <li><i class="fa fa-link"></i> <a href="{{ personal.public.web }}">{{ personal.public.web | replace("https://", "")}}</a></li>
+          <li><i class="fa fa-linkedin"></i> <a href="{{ personal.public.profiles.linkedin.link }}">{{ personal.public.profiles.linkedin.link | replace("https://", "")}}</a></li>
+        </ul>
+      </div>
+
+      <section class="main-block">
+        <h2>
+          <i class="fa fa-suitcase"></i> Working experience
+        </h2>
+
+        {% for pos in positions %}
+          {% if fullCV or not pos.avoidable %}
+            <section class="blocks">
+              <div class="date">
+                <span>{{ pos.from }}</span>
+                <span class="separator">|</span>
+                <span>{{ pos.to }}</span>
+              </div>
+              <div class="decorator">
+              </div>
+              <div class="details">
+                <header>
+                  <h3>{{ pos.title }}</h3>
+                  <span class="place"><a href="{{ pos.site.link }}">{{ pos.site.name }}</a></span>
+                  {% if pos.location %}
+                    <span class="location">{{ pos.location }}</span>
+                  {% endif %}
+                </header>
+                <div>
+                  <p>
+                    {{ pos.description }}
+                  </p>
+                  {% if pos.techStack %}
+                  <strong>Tech. stack:</strong> {{ pos.techStack | join(', ') }}
+                  {% endif %}
+                </div>
+              </div>
+            </section>
+          {% endif %}
+        {% endfor %}
+
+      </section>
+
+      <section class="main-block">
+        <h2>
+          <i class="fa fa-graduation-cap"></i> Education
+        </h2>
+
+        {% for ed in education %}
+          <section class="blocks">
+            <div class="date">
+              <span>{{ ed.year }}</span>
+            </div>
+            <div class="decorator">
+            </div>
+            <div class="details">
+              <header>
+                <h3><a href="{{ ed.titulation.link }}">{{ ed.titulation.name }}</a></h3>
+                <span class="place"><a href="{{ ed.institution.link }}">{{ ed.institution.name }}</a></span>
+              </header>
+            </div>
+          </section>
+        {% endfor %}
+      </section>
+
+      <section class="main-block">
+        <h2>
+          <i class="fa fa-globe"></i> Languages
+        </h2>
+
+        {% for lang in languages %}
+          <section class="blocks">
+            <div class="date">
+              <span></span>
+            </div>
+            <div class="decorator">
+            </div>
+            <div class="details">
+              <header>
+                <h3>{{ lang.name }}</h3>
+                <span class="place">
+                  {% if lang.motherTongue %}Mother tongue.{% endif %}
+                  {{ lang.description }}
+                </span>
+              </header>
+              <div>
+                {% if lang.certificates %}
+                <strong>Certificates:</strong>
+                <ul class="concise">
+                  {% for cert in lang.certificates %}
+                  <li>{{ cert.level }}: {{ cert.institution }}</li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </div>
+            </div>
+          </section>
+        {% endfor %}
+      </section>
+
+    {% if fullCV %}
+      <section class="main-block">
+        <h2>
+          <i class="fa fa-code"></i> Development projects
+        </h2>
+
+        {% for _, d in developmentProjects.items() %}
+          {% for pr in d.projects %}
+          <section class="blocks">
+            <div class="date">
+              {% if loop.index == 1 %}<span>{{ d.title }}</span>{% endif %}
+            </div>
+            <div class="decorator">
+            </div>
+            <div class="details">
+
+              <header>
+                <h3>{{ pr.title }}</h3>
+              </header>
+              <div>
+                <p>
+                  {{ pr.description }}
+                </p>
+
+                {% if pr.techStack %}
+                  <strong>Tech. stack:</strong> {{ pr.techStack | join(', ') }}<br>
+                {% endif %}
+
+                {% if pr.resources %}
+                  <strong>Links:</strong>
+                  {% for res in pr.resources %}
+                    <a href="{{ res.link }}">{{ res.name }}</a>
+                  {% endfor %}
+                {% endif %}
+
+              </div>
+            </div>
+          </section>
+          {% endfor %}
+        {% endfor %}
+
+      </section>
+    {% endif %}
+
+    {% if academia %}
+      <section class="main-block">
+        <h2>
+          <i class="fa fa-university"></i> Academic work
+        </h2>
+
+        <section class="blocks">
+          <div class="date">
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h3>Publications</h3>
+            </header>
+            <ul class="publications-list">
+            {% for pub in academia.publications %}
+              <li>
+                "{{ pub.title }}",
+                with {{ pub.authors | join(', ') }}.
+                <strong>{{ pub.journal }}</strong>
+                {% if pub.volume and pub.pages %}
+                  {{ pub.volume }}, {{ pub.pages }}.
+                {% endif %}
+                ({{ pub.year }}).
+                {% if pub.link %}
+                  <a href="{{ pub.link }}">Link</a>.
+                {% endif %}
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+        </section>
+
+
+        <section class="blocks">
+          <div class="date">
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h3>Other Publications</h3>
+            </header>
+            <ul class="publications-list">
+            {% for pub in academia.otherPublications %}
+              <li>
+                "{{ pub.title }}",
+                with {{ pub.authors | join(', ') }}.
+                <strong>{{ pub.journal }}</strong>
+                {% if pub.volume and pub.pages %}
+                  {{ pub.volume }}, {{ pub.pages }}.
+                {% endif %}
+                ({{ pub.year }}).
+                {% if pub.link %}
+                  <a href="{{ pub.link }}">Link</a>.
+                {% endif %}
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+        </section>
+
+
+        <section class="blocks">
+          <div class="date">
+          </div>
+          <div class="decorator">
+          </div>
+
+          <div class="details">
+            <header>
+              <h3>Teaching</h3>
+            </header>
+            <ul class="publications-list">
+            {% for t in academia.teaching %}
+              <li>
+                {{ t.period.from }}-{{ t.period.to }}:
+                {{ t.course.name }}, {{ t.degree.name }} at {{ t.university.name }}.
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+        </section>
+
+        <section class="blocks">
+          <div class="date">
+          </div>
+          <div class="decorator">
+          </div>
+
+          <div class="details">
+            <header>
+              <h3>Journal refereeing</h3>
+            </header>
+            <ul class="publications-list">
+            {% for journal in academia.journalRefereeing %}
+              <li>
+                {{ journal }}
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+        </section>
+
+      {% if fullCV %}
+        <section class="blocks">
+          <div class="date">
+          </div>
+          <div class="decorator">
+          </div>
+
+          <div class="details">
+            <header>
+              <h3>Scientific conferences</h3>
+            </header>
+            <ul class="conferences-list">
+            {% for conf in academia.conferences %}
+              <li>
+                {{ conf.title }}<span class="location">{{ conf.location }}</span>
+                <p>
+                  {{ conf.month}}, {{conf.year}}
+                </p>
+                <p>
+                  <i>{{ conf.role }}</i>
+                </p>
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+        </section>
+      {% endif %}
+      </section>
+    {% endif %}
+    </section>
+  </body>
+</html>
