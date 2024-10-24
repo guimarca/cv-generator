@@ -1,13 +1,34 @@
 # CV generation tool
 
-Source data yml files should go inside ``source_data``.
+Source data yml files should go inside `source_data`.
 
-Outputs will be inside ``files``: ``CV-[Name].html`` and ``json``folder.
+Outputs will be generated in the `output` folder: 
 
-## Setup: 
+- `CV-[Name].html`
+- `json`folder
 
-``poetry install``
+**Tip**: To save the html CV as a pdf, print it with Chrome unchecking header and footer. 
 
-## Usage: 
+## Setup:
 
-``python main.py --html --json [--full] [--filename cv-x.yml]``
+You need python and [poetry](https://python-poetry.org/docs/#installation).
+
+After cloning the repo, cd into the project's folder and run:
+
+`poetry install`
+
+## Usage:
+
+Options: 
+
+- `--html`: Generate the CV in html format sung [the template](cv_generator/assets/template.html)
+- `--json`: Generate json files with the CV data
+- `--full`: Include optional stuff (i.e.: driving licence). Corresponds to `fullCV` in html template
+- `--filename`: Name of the yaml file under source_data you want to process (leave it blank to process all)
+
+Example:
+
+```bash
+cd cv_generator
+poetry run python main.py --html --json [--full] [--filename cv-x.yml]
+```

@@ -8,5 +8,4 @@
 .venv
 
 cv_generator/source_data/*.yml
-cv_generator/files/json/**
-cv_generator/files/CV-*.html
+cv_generator/output/**

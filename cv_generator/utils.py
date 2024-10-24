@@ -2,13 +2,14 @@ import json
 import os.path
 import uuid
 
-FILES_PATH = "files"
+ASSETS_PATH = "assets"
 SOURCE_DATA_PATH = "source_data"
+OUTPUT_PATH = "output"
 
 
 def create_json(name: str, data: dict | list):
     json_str = json.dumps(data, indent=2, ensure_ascii=False).encode("utf-8")
-    json_path = os.path.join(FILES_PATH, "json")
+    json_path = os.path.join(OUTPUT_PATH, "json")
     if not os.path.exists(json_path):
         os.mkdir(json_path)
     with open(os.path.join(json_path, f"{name}.json"), "w") as f:
