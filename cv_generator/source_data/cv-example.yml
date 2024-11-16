@@ -1,0 +1,222 @@
+###########
+# Personals
+###########
+personal:
+  public:
+    email: johndoe@mail.com
+    web: https://johndohe.github.io
+    profiles:
+      linkedin:
+        name: LinkedIn
+        link: https://linkedin.com/in/john-doe
+      stackoverflow:
+        name: StackOverflow
+        link: https://stackoverflow.com/users/123456/john-doe
+  
+  private:
+    sex: Male
+    birthDate: 09/09/1999
+    nationality: Spanish
+    location: Valencia (Spain)
+    phone: +34 655 55 55
+    drivingLicense: B
+
+general:
+  fullName: John Doe
+  img: img/profile.png
+  jobTitle: Full Stack Developer
+  description: >
+    I am a Javascript/Typescript full stack developer, that is, I do frontend and made a couple endpoints in nodejs.
+  communicationSkills: >
+    Good communication skills gained through my professional experience.
+
+###########
+# Positions
+###########
+positions:
+  - from: 08/2022
+    to: now
+    title: Senior Backend developer
+    location: London (United Kingdom) - Remote
+    site:
+      name: ACME
+      link: https://acme.com
+    description: >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    techStack:
+      - Python
+      - Flask
+      - PostgreSQL
+      - Linux
+      - AWS
+      - Docker
+      - Github
+      - OpenAI GPT
+      - Google Cloud
+      - Google DocumentAI
+      - Weaviate
+      - CircleCi
+      - redis
+      - bash
+
+  - from: 10/2020
+    to: 07/2022
+    title: Full Stack Developer
+    location: Madrid (Spain) - Remote
+    site:
+      name: Foo Bar, inc
+      link: https://foobar.com
+    description: >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    techStack:
+      - Python
+      - Django
+      - Django REST
+      - FastAPI
+      - asyncio
+      - Java
+      - Spring boot
+      - Quarkus
+      - PostgreSQL
+      - Elasticsearch
+      - redis
+      - Kafka
+      - Linux
+      - AWS
+      - Docker
+      - Atlassian suite
+      - bash
+
+
+###########
+# Education
+###########
+education:
+  
+  - year: 2011
+    titulation:
+      name: Masters in Foo
+      link: https://www.uv.es/uvweb/master-economia/ca/master-universitari-economia-1285903702269.html
+    institution:
+      name: University of Valencia
+      link: https://www.uv.es
+
+  - year: 2010
+    titulation:
+      name: Bachelor's Degree in Foo
+      link: https://www.uv.es/etse
+    institution:
+      name: University of Valencia
+      link: https://www.uv.es
+
+
+###########
+# Languages
+###########
+languages:
+  - en:
+    name: English
+    motherTongue: false
+    description: >
+      Full professional competence, both writing and speaking.
+    certificates:
+      - level: B2
+        institution: Spanish Official Language School (EOI)
+
+  - cat:
+    name: Catalan/Valencian
+    motherTongue: true
+    certificates:
+      - level: C2
+        institution: Valencian Regional Government (JQCV)
+
+  - es:
+    name: Spanish
+    motherTongue: true
+
+
+###########
+# Development
+###########
+developmentProjects:
+  freelance:
+      title: "Apps"
+      projects:
+        - title: Foo App
+          description: >
+            Foo bar.
+          techStack:
+            - Python
+            - Django REST
+            - celery
+            - PostgreSQL
+            - redis
+            - AWS
+            - Docker
+            - EKS
+            - nginx
+            - apache
+            - bitbucket
+          resources:
+            - name: android
+              link: https://play.google.com/store/apps/details?id=foobar
+            - name: ios
+              link: https://apps.apple.com/us/app/foobar/id1122334455
+
+###########
+# Academia
+###########
+academia:
+  publications:
+    - title: Foo bar lorem impsum
+      authors:
+        - J. Doe
+        - A. Doe
+      journal: Information Foo
+      volume: 326
+      pages: 59 - 70
+      year: 2016
+      link: https://www.foobar.com/1
+
+  otherPublications:
+    - title: Foo bar
+      authors:
+        - J. Doe
+        - A. Doe
+      journal: "Journal of Foo"
+      volume: 2
+      pages: 463-471
+      year: 2015
+      link: http://doi.org/foo
+
+  teaching:
+    - period:
+        from: 2016
+        to: 17
+      course:
+        name: Introduction to Foo
+        link: http://www.uv.es/fatwirepub/Satellite/universitat/ca/assignatures-1285848977179.html?idA=35807&idT=1313;2017
+      degree:
+        name: Bachelor Degree in Business Administration
+        link: http://www.uv.es/uvweb/economia/ca/estudis-grau/graus/oferta-graus/graus/grau-ade-administracio-direccio-empreses-1285848977179/Titulacio.html?id=1285847455548&plantilla=Economia/Page/TPGDetaill&p2=2
+      university:
+        name: University of Valencia
+        link: https://www.uv.es
+
+  journalRefereeing:
+    - Journal of Foo
+    - Journal of Bar
+
+  conferences:
+    - title: Workshop on Foo
+      month: July
+      year: 2017
+      location: Valencia, Spain
+      role: "Presentation: Lorem impsum"
+
