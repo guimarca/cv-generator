@@ -8,4 +8,8 @@
 .venv
 
 cv_generator/source_data/*.yml
+!cv_generator/source_data/cv-example.yml
 cv_generator/output/**
+
+cv_generator/assets/img/*
+!cv_generator/assets/img/profile.png

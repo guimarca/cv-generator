@@ -26,9 +26,18 @@ Options:
 - `--full`: Include optional stuff (i.e.: driving licence). Corresponds to `fullCV` in html template
 - `--filename`: Name of the yaml file under source_data you want to process (leave it blank to process all)
 
-Example:
+Examples:
 
 ```bash
 cd cv_generator
 poetry run python main.py --html --json [--full] [--filename cv-x.yml]
 ```
+
+Build the example cv provided (cv-example.yaml):
+
+```bash
+cd cv_generator
+poetry run python main.py --html --full --filename cv-example.yml
+```
+
+(Check out [`cv_generator/output/CV-John.html`](cv_generator/output/CV-John.html))
