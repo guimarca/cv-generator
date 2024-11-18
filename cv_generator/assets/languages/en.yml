@@ -1,0 +1,20 @@
+personal:
+  private:
+    birthDate: "Birthdate"
+    location: "Location"
+    nationality: "Nationality"
+    sex: "Gender"
+    drivingLicense: "Driving license"
+workingExperience: "Working experience"
+developmentProjects: "Development projects"
+education: "Education"
+languages: "Languages"
+certificate: "Certificate"
+techStack: "Tech stack"
+motherTongue: "Mother tongue"
+publications:
+  title: "Publications"
+  otherPublications: "Other publications"
+  teaching: "Teaching"
+  journalRefereeing: "Journal refereeing"
+  scientificConferences: "Scientific conferences"

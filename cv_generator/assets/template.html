@@ -17,11 +17,11 @@
 
       <div id="personal">
         <ul>
-          <li><strong>Birthdate:</strong> {{ personal.private.birthDate }}</li>
-          <li><strong>Location:</strong> {{ personal.private.location }}</li>
-          <li><strong>Nationality:</strong> {{ personal.private.nationality }}</li>
-          <li><strong>Gender:</strong> {{ personal.private.sex }}</li>
-          <li><strong>Driving license:</strong> {{ personal.private.drivingLicense }}</li>
+          <li><strong>{{ translations.personal.private.birthDate }}:</strong> {{ personal.private.birthDate }}</li>
+          <li><strong>{{ translations.personal.private.location }}:</strong> {{ personal.private.location }}</li>
+          <li><strong>{{ translations.personal.private.nationality }}:</strong> {{ personal.private.nationality }}</li>
+          <li><strong>{{ translations.personal.private.sex }}:</strong> {{ personal.private.sex }}</li>
+          <li><strong>{{ translations.personal.private.drivingLicense }}:</strong> {{ personal.private.drivingLicense }}</li>
         </ul>
 
         <div id="profile-photo">
@@ -39,7 +39,7 @@
 
       <section class="main-block">
         <h2>
-          <i class="fa fa-suitcase"></i> Working experience
+          <i class="fa fa-suitcase"></i> {{ translations.workingExperience }}
         </h2>
 
         {% for pos in positions %}
@@ -65,7 +65,7 @@
                     {{ pos.description }}
                   </p>
                   {% if pos.techStack %}
-                  <strong>Tech. stack:</strong> {{ pos.techStack | join(', ') }}
+                  <strong>{{ translations.techStack }}</strong> {{ pos.techStack | join(', ') }}
                   {% endif %}
                 </div>
               </div>
@@ -77,7 +77,7 @@
 
       <section class="main-block">
         <h2>
-          <i class="fa fa-graduation-cap"></i> Education
+          <i class="fa fa-graduation-cap"></i> {{ translations.education }}
         </h2>
 
         {% for ed in education %}
@@ -99,7 +99,7 @@
 
       <section class="main-block">
         <h2>
-          <i class="fa fa-globe"></i> Languages
+          <i class="fa fa-globe"></i> {{ translations.languages }}
         </h2>
 
         {% for lang in languages %}
@@ -113,13 +113,13 @@
               <header>
                 <h3>{{ lang.name }}</h3>
                 <span class="place">
-                  {% if lang.motherTongue %}Mother tongue.{% endif %}
+                  {% if lang.motherTongue %}{{ translations.motherTongue }}{% endif %}
                   {{ lang.description }}
                 </span>
               </header>
               <div>
                 {% if lang.certificates %}
-                <strong>Certificates:</strong>
+                <strong>{{ translations.certificate }}</strong>
                 <ul class="concise">
                   {% for cert in lang.certificates %}
                   <li>{{ cert.level }}: {{ cert.institution }}</li>
@@ -135,7 +135,7 @@
     {% if fullCV %}
       <section class="main-block">
         <h2>
-          <i class="fa fa-code"></i> Development projects
+          <i class="fa fa-code"></i> {{ translations.developmentProjects }}
         </h2>
 
         {% for _, d in developmentProjects.items() %}
@@ -179,7 +179,7 @@
     {% if academia %}
       <section class="main-block">
         <h2>
-          <i class="fa fa-university"></i> Academic work
+          <i class="fa fa-university"></i> {{ translations.academicWork }}
         </h2>
 
         <section class="blocks">
@@ -189,7 +189,7 @@
           </div>
           <div class="details">
             <header>
-              <h3>Publications</h3>
+              <h3>{{ translations.publications.title }}</h3>
             </header>
             <ul class="publications-list">
             {% for pub in academia.publications %}
@@ -218,7 +218,7 @@
           </div>
           <div class="details">
             <header>
-              <h3>Other Publications</h3>
+              <h3>{{ translations.publications.otherPublications }}</h3>
             </header>
             <ul class="publications-list">
             {% for pub in academia.otherPublications %}
@@ -248,7 +248,7 @@
 
           <div class="details">
             <header>
-              <h3>Teaching</h3>
+              <h3>{{ translations.publications.teaching }}</h3>
             </header>
             <ul class="publications-list">
             {% for t in academia.teaching %}
@@ -269,7 +269,7 @@
 
           <div class="details">
             <header>
-              <h3>Journal refereeing</h3>
+              <h3>{{ translations.publications.journalRefereeing }}</h3>
             </header>
             <ul class="publications-list">
             {% for journal in academia.journalRefereeing %}
@@ -290,7 +290,7 @@
 
           <div class="details">
             <header>
-              <h3>Scientific conferences</h3>
+              <h3>{{ translations.publications.scientificConferences }}</h3>
             </header>
             <ul class="conferences-list">
             {% for conf in academia.conferences %}
