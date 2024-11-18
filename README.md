@@ -29,6 +29,7 @@ poetry install
 - `--json`: Generate JSON files with the CV data.
 - `--full`: Include optional details (e.g., driving license). Corresponds to `fullCV` in the HTML template.
 - `--filename`: Specify the name of the YAML file under `source_data` you want to process (leave blank to process all).
+- `--lang`: Specifies the language for the generated template (default is English)
 
 ### Examples:
 

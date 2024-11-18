@@ -1,0 +1,20 @@
+personal:
+  private:
+    birthDate: "Fecha de Nacimiento"
+    location: "Ubicación"
+    nationality: "Nacionalidad"
+    sex: "Género"
+    drivingLicense: "Licencia de Conducir"
+workingExperience: "Experiencia Laboral"
+developmentProjects: "Proyectos de Desarrollo"
+education: "Educación"
+languages: "Idiomas"
+certificate: "Certificado"
+techStack: "Tecnologías"
+motherTongue: "Nativo"
+publications:
+  title: "Publicaciones"
+  otherPublications: "Otras Publicaciones"
+  teaching: "Enseñanza"
+  journalRefereeing: "Trabajos de revisión por pares para revistas científicas"
+  scientificConferences: "Conferencias Científicas"
