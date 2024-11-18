@@ -25,6 +25,7 @@ Options:
 - `--json`: Generate json files with the CV data
 - `--full`: Include optional stuff (i.e.: driving licence). Corresponds to `fullCV` in html template
 - `--filename`: Name of the yaml file under source_data you want to process (leave it blank to process all)
+- `--lang`: Specifies the language for the generated template (default is English)
 
 Examples:
 
