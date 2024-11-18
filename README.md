@@ -1,44 +1,50 @@
-# CV generation tool
+# CV Generation Tool
 
-Source data yml files should go inside `source_data`.
+Source data YAML files should go inside the `source_data` folder.
 
-Outputs will be generated in the `output` folder: 
+Outputs will be generated in the `output` folder:
 
 - `CV-[Name].html`
-- `json`folder
+- `json` folder
 
-**Tip**: To save the html CV as a pdf, print it with Chrome unchecking header and footer. 
+> [!TIP]
+> To save the HTML CV as a PDF, print it using Chrome and uncheck the header and footer options.
 
-## Setup:
+## Setup
 
-You need python and [poetry](https://python-poetry.org/docs/#installation).
+> [!IMPORTANT]
+> You need Python and [Poetry](https://python-poetry.org/docs/#installation).
 
-After cloning the repo, cd into the project's folder and run:
+After cloning the repository, navigate to the project's folder and run:
 
-`poetry install`
+```bash
+poetry install
+```
 
-## Usage:
+## Usage
 
-Options: 
+### Options:
 
-- `--html`: Generate the CV in html format sung [the template](cv_generator/assets/template.html)
-- `--json`: Generate json files with the CV data
-- `--full`: Include optional stuff (i.e.: driving licence). Corresponds to `fullCV` in html template
-- `--filename`: Name of the yaml file under source_data you want to process (leave it blank to process all)
+- `--html`: Generate the CV in HTML format using [the template](cv_generator/assets/template.html).
+- `--json`: Generate JSON files with the CV data.
+- `--full`: Include optional details (e.g., driving license). Corresponds to `fullCV` in the HTML template.
+- `--filename`: Specify the name of the YAML file under `source_data` you want to process (leave blank to process all).
 - `--lang`: Specifies the language for the generated template (default is English)
 
-Examples:
+### Examples:
+
+Generate the CV with HTML and JSON outputs:
 
 ```bash
 cd cv_generator
 poetry run python main.py --html --json [--full] [--filename cv-x.yml]
 ```
 
-Build the example cv provided (cv-example.yaml):
+Build the example CV provided (`cv-example.yml`):
 
 ```bash
 cd cv_generator
 poetry run python main.py --html --full --filename cv-example.yml
 ```
 
-(Check out [`cv_generator/output/CV-John.html`](cv_generator/output/CV-John.html))
+Check the generated file: [`cv_generator/output/CV-John.html`](cv_generator/output/CV-John.html)
