@@ -13,10 +13,16 @@ env = Environment(
 def get_output_name(cv: dict) -> str:
     return f"CV-{cv['general']['fullName'].split(' ')[0]}"
 
-
-def load_translations(language):    
-    with open(os.path.join(f'{ASSETS_PATH}/languages', f'{language}.yml'), 'r') as file:
+def load_language_file(file_path):
+    with open(file_path, 'r') as file:
         return yaml.safe_load(file)
+
+def load_translations(language):
+    try:
+        return load_language_file(os.path.join(f'{ASSETS_PATH}/languages', f'{language}.yml'))
+    except FileNotFoundError:
+        print(f"Language file not found: {language}.yml, using default language: en")
+        return load_language_file(os.path.join(f'{ASSETS_PATH}/languages', 'en.yml'))
 
 
 def generate_html(cv: dict, full=False, lang='en'):
