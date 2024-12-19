@@ -5,14 +5,14 @@ import uuid
 ASSETS_PATH = "assets"
 SOURCE_DATA_PATH = "source_data"
 OUTPUT_PATH = "output"
+JSON_OUTPUT_PATH = os.path.join(OUTPUT_PATH, "json")
 
 
 def create_json(name: str, data: dict | list):
     json_str = json.dumps(data, indent=2, ensure_ascii=False).encode("utf-8")
-    json_path = os.path.join(OUTPUT_PATH, "json")
-    if not os.path.exists(json_path):
-        os.mkdir(json_path)
-    with open(os.path.join(json_path, f"{name}.json"), "w") as f:
+    if not os.path.exists(JSON_OUTPUT_PATH):
+        os.mkdir(JSON_OUTPUT_PATH)
+    with open(os.path.join(JSON_OUTPUT_PATH, f"{name}.json"), "w") as f:
         f.writelines(json_str.decode())
 
 

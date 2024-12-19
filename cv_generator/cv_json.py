@@ -1,4 +1,6 @@
-from cv_generator.utils import create_json, protect_email
+import os
+
+from cv_generator.utils import create_json, protect_email, JSON_OUTPUT_PATH
 
 
 def generate_contact(cv: dict) -> dict:
@@ -43,4 +45,4 @@ def generate_json(cv: dict):
     create_json("positions", generate_positions(cv))
     create_json("publications", cv["academia"]["publications"])
     create_json("teaching", cv["academia"]["teaching"])
-    print("json done!\n")
+    print(f"json done! file://{os.path.join(os.path.abspath(os.getcwd()), JSON_OUTPUT_PATH)}\n")
